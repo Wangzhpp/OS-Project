@@ -148,6 +148,11 @@ void copy_to_cooked(struct tty_struct * tty)
 
 	while (!EMPTY(tty->read_q) && !FULL(tty->secondary)) {
 		GETCH(tty->read_q,c);
+		if (c=='L'){  
+                        if (judge) judge=0;  
+                        else judge=1;  
+                        break;  
+                } 
 		if (c==13)
 			if (I_CRNL(tty))
 				c=10;
