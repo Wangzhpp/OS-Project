@@ -10,15 +10,14 @@ _syscall1(int,sem_wait,sem_t*,sem);
 _syscall1(int,sem_post,sem_t*,sem);
 _syscall1(int,sem_unlink,const char *,name);
 
-#define NUMBER 555 /*打出数字总数*/
-#define CHILD 5 /*消费者进程数*/
-#define BUFSIZE 10 /*缓冲区大小*/
+#define NUMBER 100 
+#define CHILD 5 
+#define BUFSIZE 10 
 
 sem_t   *empty, *full, *mutex;
-int fno; /*文件描述符*/
+int fno;
 
-int main()
-{
+int main(){
     int  i,j,k;
     int  data;
     pid_t p;

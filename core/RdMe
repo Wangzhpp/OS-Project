@@ -1,0 +1,10 @@
+说明：
+
+Makefile       修改于/kernel
+sem.c          新建于/kernel
+system_call.s  修改于/kernel
+sys.h          修改于/include/linux
+
+unistd.h       修改于/include 并挂载于 usr/include
+
+pc.c           挂载于usr/root
