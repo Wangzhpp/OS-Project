@@ -208,10 +208,23 @@ cur_table:
  * this routine handles function keys
  */
 func:
+	
+	cmpb $0x58,%al 
+    jne continue_func 
+    pushl %eax
+    pushl %ecx
+    pushl %edx
+    call switch_f12 
+    popl %edx
+    popl %ecx
+    popl %eax
+    jmp end_func 
+	continue_func:
+
 	pushl %eax
 	pushl %ecx
 	pushl %edx
-	//call show_stat
+	call show_stat
 	popl %edx
 	popl %ecx
 	popl %eax

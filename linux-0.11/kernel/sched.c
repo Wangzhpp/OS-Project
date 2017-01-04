@@ -23,6 +23,15 @@
 #define _S(nr) (1<<((nr)-1))
 #define _BLOCKABLE (~(_S(SIGKILL) | _S(SIGSTOP)))
 
+
+void switch_f12(void)
+{
+    if (judge == 1)
+        judge = 0;
+    else
+        judge = 1;
+}
+
 void show_task(int nr,struct task_struct * p)
 {
 	int i,j = 4096-sizeof(struct task_struct);
